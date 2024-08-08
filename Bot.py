@@ -1,9 +1,9 @@
 import telebot
 import schedule
 import time
-import os
 import logging
 import json
+import os
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from datetime import datetime
 
@@ -103,5 +103,5 @@ if __name__ == "__main__":
     logger.info("Starting reminder bot...")
     # Send reminder immediately for testing purposes
     send_reminder()
+    threading.Thread(target=run_scheduler).start()
     bot.polling(none_stop=True)
-    run_scheduler()
